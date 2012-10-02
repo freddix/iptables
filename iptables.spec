@@ -1,11 +1,11 @@
 Summary:	IPv4 packet filtering CLI programs
 Name:		iptables
-Version:	1.4.14
+Version:	1.4.15
 Release:	1
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://www.netfilter.org/projects/iptables/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	5ab24ad683f76689cfe7e0c73f44855d
+# Source0-md5:	8bf564ea8348522fc1db727868828def
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -57,8 +57,7 @@ libraries.
 %{__automake}
 %configure \
 	--disable-static	\
-	--enable-devel		\
-	--enable-libipq
+	--enable-devel
 %{__make}
 
 %install
@@ -70,8 +69,8 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	libs -p /sbin/ldconfig
-%postun	libs -p /sbin/ldconfig
+%post	libs -p /usr/sbin/ldconfig
+%postun	libs -p /usr/sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
@@ -81,6 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/xtables/libxt_*.so
 %attr(755,root,root) %{_sbindir}/iptables*
 %attr(755,root,root) %{_sbindir}/xtables-multi
+%{_mandir}/man1/iptables*.1*
 %{_mandir}/man8/iptables*.8*
 
 %files ipv6
