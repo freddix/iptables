@@ -1,11 +1,11 @@
 Summary:	IPv4 packet filtering CLI programs
 Name:		iptables
-Version:	1.4.18
-Release:	2
+Version:	1.4.19.1
+Release:	1
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://www.netfilter.org/projects/iptables/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	a819199d5ec013b82da13a8ffbba857e
+# Source0-md5:	be97ce9007fa42c867901b496c935a0a
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
